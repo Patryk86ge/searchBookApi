@@ -44,7 +44,7 @@ const Home = () => {
               <BookList
                 key={addBook.id}
                 book={addBook}
-                btnName={"Remove Book"}
+                btnName={"Usuń książkę"}
                 addBook={() => removeBook(addBook.id,setAddBooks)}
               />
             )
@@ -69,7 +69,7 @@ const Home = () => {
                   key={book.id}
                   book={book}
                   addBook={() => addFavourite(book,addBooks,setAddBooks)}
-                  btnName={"Add Book"}
+                  btnName={"Dodaj książkę"}
                 />
               )
             })

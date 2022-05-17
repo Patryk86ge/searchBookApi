@@ -1,5 +1,6 @@
-import './App.css';
+import './asets/App.css';
 import Home from './Home'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
