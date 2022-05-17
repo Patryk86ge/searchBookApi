@@ -1,6 +1,6 @@
 import React from 'react';
 import noImg from '../src/asets/image/No-image-available.png'
-import ModalViev from "./asets/image/ModalViev";
+import ModalViev from "./asets/ModalViev";
 import {Button} from "react-bootstrap";
 // const MAX_LENGTH = 200;
 

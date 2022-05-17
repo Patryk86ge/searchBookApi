@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Modal} from "react-bootstrap";
-import noImg from "./No-image-available.png";
+import noImg from "./image/No-image-available.png";
 
 const ModalViev = ({book}) => {
   const [show, setShow] = useState(false);
