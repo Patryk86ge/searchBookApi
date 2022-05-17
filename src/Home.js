@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Header from "./Header";
 import BookList from "./BookList";
+import {addFavourite,removeBook} from './asets/helpers'
 
 
 const API_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
@@ -31,13 +32,7 @@ const Home = () => {
     e.preventDefault();
     bookHandler(searchBook);
   }
-  const addFavourite = (book) => {
-    const newAddBooksList = [...addBooks, book];
-    setAddBooks(newAddBooksList);
-  }
-  const removeBook = (id) => {
-    setAddBooks(prev => prev.filter(el => el.id !== id))
-  }
+
 
   return (
     <>
@@ -50,7 +45,7 @@ const Home = () => {
                 key={addBook.id}
                 book={addBook}
                 btnName={"Remove Book"}
-                addBook={() => removeBook(addBook.id)}
+                addBook={() => removeBook(addBook.id,setAddBooks)}
               />
             )
 
@@ -73,7 +68,7 @@ const Home = () => {
                 <BookList
                   key={book.id}
                   book={book}
-                  addBook={() => addFavourite(book)}
+                  addBook={() => addFavourite(book,addBooks,setAddBooks)}
                   btnName={"Add Book"}
                 />
               )
