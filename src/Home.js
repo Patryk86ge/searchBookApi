@@ -11,7 +11,7 @@ const Home = () => {
   const [addBooks, setAddBooks] = useState([]);
 
   const bookHandler = (searchBook) => {
-    fetch(`${API_URL}${searchBook}+terms+&maxResults=15`)
+    fetch(`${API_URL}${searchBook}+terms+&maxResults=40`)
       .then(response => response.json())
       .then(data => {
           console.log(data.items)

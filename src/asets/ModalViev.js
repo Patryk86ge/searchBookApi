@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Modal} from "react-bootstrap";
-import noImg from "./image/No-image-available.png";
+// import noImg from "./image/No-image-available.png";
 
 const ModalViev = ({book}) => {
   const [show, setShow] = useState(false);
@@ -16,16 +16,11 @@ const ModalViev = ({book}) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{book.volumeInfo.title}</Modal.Title>
+          <Modal.Title>{book.volumeInfo.title.substring(0, 40) + "..."}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img
-            src={book.volumeInfo.imageLinks.thumbnail}
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = {noImg}
-            }}
-            alt={book.volumeInfo.title}
+          <img src={book.volumeInfo.imageLinks === undefined ? "" : `${book.volumeInfo.imageLinks.thumbnail}`}
+               alt={book.volumeInfo.title}
           />
           <p>Autor: {book.volumeInfo.authors}</p>
           <p>Data publikacji : {book.volumeInfo.publishedDate}</p>
