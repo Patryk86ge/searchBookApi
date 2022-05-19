@@ -16,7 +16,7 @@ const ModalViev = ({book}) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{book.volumeInfo.title.substring(0, 40) + "..."}</Modal.Title>
+          <Modal.Title>{book.volumeInfo.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img src={book.volumeInfo.imageLinks === undefined ? "" : `${book.volumeInfo.imageLinks.thumbnail}`}
