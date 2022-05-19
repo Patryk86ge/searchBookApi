@@ -4,6 +4,7 @@ import {Button, Modal} from "react-bootstrap";
 
 const ModalViev = ({book}) => {
   const [show, setShow] = useState(false);
+  const books = book.volumeInfo
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -16,15 +17,15 @@ const ModalViev = ({book}) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{book.volumeInfo.title}</Modal.Title>
+          <Modal.Title>{books.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={book.volumeInfo.imageLinks === undefined ? "" : `${book.volumeInfo.imageLinks.thumbnail}`}
-               alt={book.volumeInfo.title}
+          <img src={books.imageLinks === undefined ? "" : `${books.imageLinks.thumbnail}`}
+               alt={books.title}
           />
-          <p>Autor: {book.volumeInfo.authors}</p>
-          <p>Data publikacji : {book.volumeInfo.publishedDate}</p>
-          <p>Opis : {book.volumeInfo.description}</p>
+          <p>Autor: {books.authors}</p>
+          <p>Data publikacji : {books.publishedDate}</p>
+          <p>Opis : {books.description}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
